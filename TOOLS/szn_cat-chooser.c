@@ -5,10 +5,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-#DEFINE SZN_MAX = 41;
-#DEFINE SZN_MIN = 1;
-#DEFINE CLUE_VAL_MAX = 500;
-#DEFINE CLUE_VAL_MIN = 100;
+#define SZN_MAX 41
+#define SZN_MIN 1
+#define CLUE_VAL_MAX 500
+#define CLUE_VAL_MIN 100
 
 int choose_szn(int min, int max)
 {
