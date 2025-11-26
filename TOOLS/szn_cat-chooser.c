@@ -10,7 +10,24 @@
 #DEFINE CLUE_VAL_MAX = 500;
 #DEFINE CLUE_VAL_MIN = 100;
 
+int choose_szn(int min, int max)
+{
+    srand(350202);
+    int season = rand() % (max - min + 1) + min;
+    return season;
+}
+
+int choose_clue_val(int min, int max, int seed)
+{
+    srand(seed);
+    int clue_val = rand() % (max - min +1) + min;
+    return clue_val;
+}
+
 int main()
 {
-return 0;
+    int szn_seed = choose_szn(SZN_MIN, SZN_MAX);
+    printf("Season: %d\n", szn_seed);
+    printf("Clue value: %d\n", choose_clue_val(CLUE_VAL_MIN, CLUE_VAL_MAX, szn_seed));
+    return 0;
 }
