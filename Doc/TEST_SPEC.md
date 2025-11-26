@@ -18,19 +18,27 @@ The experiment involves the following AI platforms:
 - Perplexity
 - Lumo (Proton)
 
-# Additional tools used
+## Additional tools used
 This experiment uses the following additional tools:
 - custom RNG-based random selector to select season and clue value
 - Markdown documentation
 - A python script to extract 200 most common Jeopardy categories from the dataset.
 - [Wheel Decide](https://wheeldecide.com/) to select clue category from a set of 200 core Jeopardy categories.
 
-# Ground rules
+## Ground rules
 Each AI platform is expected to implicitly infer and follow the Jeopardy answer format.
 
-# Evaluation criteria
+## Evaluation criteria
 Te evaluation criteria for each AI platform are as follows:
 - Can AI implicitly recognize a Jeopardy clue based on the format and wording alone?
 - Can AI correctly infer the expected answer to the Jeopardy clue?
 - Can AI implicitly infer and understand the correct answer format required as per the Jeopardy rules?
 - How consistently can AI perform across a set of 10 randomly selected Jeopardy clues?
+
+## Notes
+This experiment is conducted independently of any organizations. No collaboration with any of the named platforms took place and therefore wasn't a factor.
+
+## Experiment-specific scoring
+The experiment applies a point score for every answer based on the [Evaluation Criteria] (#evaluation-criteria)
+Maximum score is 3 points, no points for factually incorrect content and violation of the expected answer format.
+No weights are applied to any scoring criteria. Half points are available for answers that are technically correct, but diverge from the expected wording.
