@@ -1,44 +1,56 @@
-# Experiment specification
+# Experiment Specification
 
-## Purpose of this Document
-This document describes the purpose, setup and hypotheses of this experiment.
+## 1. Purpose of this Document
+This document defines the purpose, setup, methodology, and hypotheses behind the experiment.
 
-## The purpose of this Experiment
-This experiment aims to to evaluate how different AI Platforms/Models perform when given a randomly selected Jeopardy clue
-without any additional context. The set of Jeopardy clues used in this experiment is:
-the jeopardy_clue_dataset repository, which prefers not to be directly credited.
+## 2. Purpose of the Experiment
+The purpose of this experiment is to evaluate how different AI platforms and models perform when presented with a randomly selected *Jeopardy!* clue **without any additional context**.
 
-The experiment involves the following AI platforms:
-- ChatGPT (OpenAI)
-- Gemini (Google)
-- Copilot (Microsoft)
-- Claude (Anthropic)
-- Grok (xAI)
-- Mistral (LeChat AI)
-- Perplexity
-- Lumo (Proton)
+The clues are sourced from the **jeopardy_clue_dataset** repository, which prefers not to be directly credited.
 
-## Additional tools used
-This experiment uses the following additional tools:
-- custom RNG-based random selector to select season and clue value
-- Markdown documentation
-- A python script to extract 200 most common Jeopardy categories from the dataset.
-- [Wheel Decide](https://wheeldecide.com/) to select clue category from a set of 200 core Jeopardy categories.
+The AI platforms evaluated in this experiment include:
 
-## Ground rules
-Each AI platform is expected to implicitly infer and follow the Jeopardy answer format.
+- **ChatGPT** (OpenAI)  
+- **Gemini** (Google)  
+- **Copilot** (Microsoft)  
+- **Claude** (Anthropic)  
+- **Grok** (xAI)  
+- **Mistral / LeChat AI**  
+- **Perplexity**  
+- **Lumo** (Proton)
 
-## Evaluation criteria
-Te evaluation criteria for each AI platform are as follows:
-- Can AI implicitly recognize a Jeopardy clue based on the format and wording alone?
-- Can AI correctly infer the expected answer to the Jeopardy clue?
-- Can AI implicitly infer and understand the correct answer format required as per the Jeopardy rules?
-- How consistently can AI perform across a set of 10 randomly selected Jeopardy clues?
+## 3. Additional Tools Used
+This experiment uses the following supporting tools:
 
-## Notes
-This experiment is conducted independently of any organizations. No collaboration with any of the named platforms took place and therefore wasn't a factor.
+- A custom RNG-based selector to choose the season and clue value  
+- Markdown-based documentation  
+- A Python script to extract the **200 most common *Jeopardy!* categories** from the dataset   
+- Although Wheel Decide was initially considered for category selection, it does not support importing large lists from text files.  
+- Instead, a **custom Python-based selection tool** will be used to load the 200 categories and randomly select one for each run of the experiment.
 
-## Experiment-specific scoring
-The experiment applies a point score for every answer based on the [Evaluation Criteria] (#evaluation-criteria)
-Maximum score is 3 points, no points for factually incorrect content and violation of the expected answer format.
-No weights are applied to any scoring criteria. Half points are available for answers that are technically correct, but diverge from the expected wording.
+## 4. Ground Rules
+Each AI platform must:
+
+- Infer that the prompt is a *Jeopardy!* clue  
+- Provide an answer following *Jeopardy!*’s expected response format  
+- Operate without being explicitly told that the prompt is from *Jeopardy!*  
+
+## 5. Evaluation Criteria
+AI responses are evaluated based on:
+
+1. **Recognition** – Does the AI implicitly recognize the prompt as a *Jeopardy!* clue?  
+2. **Correctness** – Can the AI infer the correct response to the clue?  
+3. **Format Compliance** – Does the AI follow the required *Jeopardy!* answer format?  
+4. **Consistency** – How consistently does the AI perform across **10 randomly selected clues**?
+
+## 6. Notes
+- This experiment is conducted **independently**, without input or collaboration from any of the platforms evaluated.  
+- No organization influenced the design or execution of the experiment.
+
+## 7. Experiment-Specific Scoring
+Each answer is scored based on the criteria above.
+
+- **Maximum score:** 3 points  
+- **0 points** for factually incorrect responses or violations of the required answer format  
+- **Half points** may be awarded for technically correct answers that diverge from expected wording  
+- All criteria are weighted equally — **no weighting or scaling** is applied  
