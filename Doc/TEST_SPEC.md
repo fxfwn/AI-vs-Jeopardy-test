@@ -24,8 +24,9 @@ This experiment uses the following supporting tools:
 
 - A custom RNG-based selector to choose the season and clue value  
 - Markdown-based documentation  
-- A Python script to extract the **200 most common *Jeopardy!* categories** from the dataset  
-- **Wheel Decide** for randomly selecting one category from the 200 core categories  
+- A Python script to extract the **200 most common *Jeopardy!* categories** from the dataset   
+- Although Wheel Decide was initially considered for category selection, it does not support importing large lists from text files.  
+- Instead, a **custom Python-based selection tool** will be used to load the 200 categories and randomly select one for each run of the experiment.
 
 ## 4. Ground Rules
 Each AI platform must:
